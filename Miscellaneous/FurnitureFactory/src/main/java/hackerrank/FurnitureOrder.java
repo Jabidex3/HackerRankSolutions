@@ -58,7 +58,15 @@ public class FurnitureOrder implements FurnitureOrderInterface {
 
     public int getTotalOrderQuantity() {
         // TODO: Complete the method
-    	return -1;
+    	int qty = 0;
+        for(Map.Entry<Furniture, Integer> entry:hm.entrySet()) {
+        	Furniture.valueOf(entry.getKey().toString());
+        	//System.out.println((Furniture.valueOf(entry.getKey().toString())));
+        	
+        	qty+=hm.get(Furniture.valueOf(entry.getKey().toString()));
+        }
+       // System.out.println();
+        return qty;
         
     }
 }
